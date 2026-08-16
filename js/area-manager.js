@@ -179,10 +179,10 @@ export class AreaManager {
             overpassQuery = `
                 [out:json][timeout:10];
                 (
-                    nwr[landuse=residential](${bbox});
-                    nwr[landuse=retail](${bbox});
-                    nwr[landuse=commercial](${bbox});
-                    nwr[landuse=industrial](${bbox});
+                    wr[landuse=residential](${bbox});
+                    wr[landuse=retail](${bbox});
+                    wr[landuse=commercial](${bbox});
+                    wr[landuse=industrial](${bbox});
                 );
                 (._;>;);
                 out body;
@@ -191,7 +191,7 @@ export class AreaManager {
             overpassQuery = `
                 [out:json][timeout:10];
                 (
-                    relation[${selectedRule}](${bbox});
+                    wr[${selectedRule}](${bbox});
                 );
                 (._;>;);
                 out body;

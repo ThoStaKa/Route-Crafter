@@ -177,7 +177,7 @@ export class AreaManager {
         
         if (selectedRule === "landuse=residential|landuse=retail|landuse=commercial|landuse=industrial") {
             overpassQuery = `
-                [out:json][timeout:10];
+                [out:json][timeout:30];
                 (
                     wr[landuse=residential](${bbox});
                     wr[landuse=retail](${bbox});
@@ -189,7 +189,7 @@ export class AreaManager {
             `;
         } else {
             overpassQuery = `
-                [out:json][timeout:10];
+                [out:json][timeout:30];
                 (
                     wr[${selectedRule}](${bbox});
                 );
